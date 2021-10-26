@@ -1,0 +1,125 @@
+{
+  "bouquets": [
+    {
+      "id": 1,
+      "name": "Orange Bouquet 60 cm",
+      "price": "€134.00",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/f00493ea32cdaec8e3674746c0881e3a.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Love Cocktail: Roses and Lilies",
+      "price": "€64.90",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5d84d53800517236157520.png"
+    },
+    {
+      "id": 3,
+      "name": "Innocent Love: Lilies and Roses",
+      "price": "€64.90",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5d84ce9ecfb91921497510.png"
+    },
+    {
+      "id": 4,
+      "name": "Sunrise: Lilies and Carnations",
+      "price": "€58.27",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5d67855f7f299065472491.png"
+    },
+    {
+      "id": 5,
+      "name": "For My Inspiration: 24 Red Roses",
+      "price": "€118.00",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5d84cdcad77cb636598907.png"
+    },
+    {
+      "id": 6,
+      "name": "Infinite Love: 12 Red Roses",
+      "price": "€65.00",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5c531966ba40c320405688.png"
+    },
+    {
+      "id": 7,
+      "name": "Love Hypnosis: 6 Red Roses",
+      "price": "€54.90",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5c499db5d2de1401501335.png"
+    },
+    {
+      "id": 8,
+      "name": "The Perfect Match: Roses and Lilies",
+      "price": "€61.11",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5c4996171c8e9421801664.png"
+    },
+    {
+      "id": 9,
+      "name": "Love Actually: 12 Red and Pink Roses",
+      "price": "€64.90",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5d84cf8de4ea2504517455.png"
+    },
+    {
+      "id": 10,
+      "name": "Touch of Class: 12 White Roses",
+      "price": "€64.90",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/52b12f1953a4aee1e825f3c635d06e0b.png"
+    },
+    {
+      "id": 11,
+      "name": "Floral Energy: Mixed Orange Flowers",
+      "price": "€64.90",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5cdc02cac4533194998795.png"
+    },
+    {
+      "id": 12,
+      "name": "Vibrancy: Yellow and Pink Roses",
+      "price": "€54.90",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5d514aeb33d0d729950718.png"
+    },
+    {
+      "id": 13,
+      "name": "Pink Spell: Roses and Gerberas",
+      "price": "€54.90",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/36f806e95c3acf9a56467922e69e80ad.png"
+    },
+    {
+      "id": 14,
+      "name": "Floral Wonderland: Gerberas",
+      "price": "€44.90",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5d4d55ec1c4a2671496259.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Exquisiteness: Cream Tiger Orchid",
+      "price": "€44.90",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5cc2c38b2c6cc164201219.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Venus Kiss: Pink Orchid",
+      "price": "€44.90",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5c98d4cccabc5849369838.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Subtle Freshness: Roses and Lilies",
+      "price": "€64.90",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5d84d46e1fe63737087781.png"
+    },
+    {
+      "id": 18,
+      "name": "Familial Love: White Lilies and Gerberas",
+      "price": "€67.68",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5cdd463408a93217111334.png"
+    },
+    {
+      "id": 19,
+      "name": "Natural Poetry: Lilies and Roses",
+      "price": "€64.90",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5d84d413616d7421246578.png"
+    },
+    {
+      "id": 20,
+      "name": "Sincere Smile: Pink Roses and Gerberas",
+      "price": "€62.72",
+      "image": "https://d1mxm3s28igxxe.cloudfront.net/480x480/5d88ba27a40fa820506277.png"
+    }
+  ]
+}
+
