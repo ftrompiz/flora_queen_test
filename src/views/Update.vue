@@ -1,9 +1,11 @@
 <template>
   <Form @form-edited="updateBouquet"
-        :mode_form="mode_form"/>
+        :mode_form="mode_form"
+        :bouquet="this.bouquet"
+  />
 </template>
 <script>
-import Form from '../components/form/Form'
+import Form from '../components/form/FormBouquet'
 
 export default {
   name: 'Update',
@@ -16,6 +18,7 @@ export default {
   data() {
     return {
       mode_form: 'Update',
+      bouquet: {}
     }
   },
   methods: {
@@ -48,9 +51,19 @@ export default {
         alert('Error updating bouquet')
       }
     },
+    async fetchBouquet(id){
+      const res = await fetch(`/api/bouquets/${id}`);
+
+      const data = await  res.json();
+
+      this.bouquet = data;
+
+      return data;
+    },
   },
   async created() {
-    console.log(this.$route.query.test)
+    const id =  this.$route.params.id
+    await this.fetchBouquet(id)
   }
 }
 </script>

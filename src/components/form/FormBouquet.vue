@@ -1,6 +1,5 @@
 <template>
-  <section class="catalogue"
-           id="catalogue">
+  <div>
     <h2>{{`${mode_form} Bouquet ${this.id}`}}</h2>
     <form @submit="onSubmit"
           class="flora-form">
@@ -10,7 +9,7 @@
              class="form-control"
              placeholder="Name" />
       <input
-          type="number"
+          type="text"
           name="price"
           v-model="price"
           class="form-control"
@@ -20,13 +19,14 @@
              value="Save Bouquet"
              class="btn btn-primary btn-photo-menu">Save Bouquet</button>
     </form>
-  </section>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'Form',
   data() {
+    console.log(this.bouquet);
     return {
       id:     this.mode_form !== 'New' ? this.bouquet.id    : '',
       name:   this.mode_form !== 'New' ? this.bouquet.name  : '',

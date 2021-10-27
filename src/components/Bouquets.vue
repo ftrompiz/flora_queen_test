@@ -2,7 +2,9 @@
   <div class="catalogue-products">
       <Bouquet :key="bouquet.id"
                v-for="bouquet in bouquets"
-               :bouquet="bouquet" />
+               :bouquet="bouquet"
+               @delete-bouquet="$emit('delete-bouquet',bouquet.id)"
+    />
   </div>
 </template>
 

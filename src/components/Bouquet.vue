@@ -28,8 +28,10 @@
           <span class="product-card-price h4 mb-0 d-flex">
             <span class="price">{{bouquet.price}}</span>
           </span>
-          &nbsp;
-          <router-link :to="`/bouquet/update/${bouquet.id}`">Edit bouquet</router-link>
+          &nbsp;&nbsp;
+          <router-link @click="$emit('edit-bouquet-link',$bouquet)" :to="`/bouquets/${bouquet.id}/update`">Edit</router-link>
+          &nbsp;&nbsp;
+          <a href="#" @click="$emit('delete-bouquet',bouquet.id)">Delete</a>
         </div>
       </main>
     </a>
@@ -40,8 +42,9 @@
 export default {
   name: 'Bouquet',
   props: {
-    bouquet: Object
+    bouquet: Object,
   },
+
 }
 </script>
 

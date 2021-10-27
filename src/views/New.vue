@@ -1,9 +1,9 @@
 <template>
-  <Form @form-edited="addBouquet"
+  <FormBouquet @form-edited="addNewBouquet"
         :mode_form="mode_form"/>
 </template>
 <script>
-import Form from '../components/form/Form'
+import FormBouquet from '../components/form/FormBouquet'
 
 export default {
   name: 'New',
@@ -11,35 +11,18 @@ export default {
 
   },
   components: {
-    Form
+    FormBouquet
   },
   data() {
     return {
       mode_form: 'New',
+
     }
   },
   methods: {
-    async addBouquet(bouquet){
-
-      const requestOptions = {
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json'
-        },
-        body: JSON.stringify(bouquet)
-      };
-
-      await fetch('api/bouquets',requestOptions)
-      .then(async response => {
-        const data = await response.json();
-        console.log(data);
-        this.toggle_add_form = false;
-      })
-      .catch(error => {
-        alert('Error saving the bouquet');
-        console.log('There was an error!', error);
-      });
-    },
+    addNewBouquet(bouquet){
+      this.$emit('add-bouquet',bouquet);
+    }
   },
   async created() {
   }
