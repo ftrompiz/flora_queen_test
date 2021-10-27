@@ -2,8 +2,10 @@
   <div>
     <router-link
         to="/bouquets/new">New bouquet</router-link>
-    <router-view @add-bouquet="addBouquet" ></router-view>
-    <Bouquets @delete-bouquet="deleteBouquet" :bouquets="bouquets" />
+    <router-view @add-bouquet="addBouquet"
+                 @update-bouquet="updateBouquet" ></router-view>
+    <Bouquets @delete-bouquet="deleteBouquet"
+              :bouquets="bouquets" />
   </div>
 </template>
 <script>
@@ -62,6 +64,45 @@ export default {
               console.log(error);
             });
       }
+    },
+
+    async updateBouquet(bouquet) {
+      const bouquetToEdit = await this.fetchBouquet(bouquet.id);
+      const updBouquet = {
+        ...bouquetToEdit,
+        name: bouquet.name,
+        price: bouquet.price,
+      }
+
+      const requestOptions = {
+        method: 'PUT',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify(updBouquet)
+      };
+
+      await fetch(`/api/bouquets/${bouquet.id}`,requestOptions)
+          .then(async response => {
+            const data = await response.json();
+            console.log(data);
+            this.bouquets = this.bouquets.map((bouquet) =>
+                bouquet.id === updBouquet.id ?
+                    { ...bouquet,
+                      name: updBouquet.name,
+                      price: updBouquet.price, } :
+                    bouquet)
+          })
+          .catch(error => {
+            alert('Error deleting bouquet');
+            console.log(error);
+          });
+
+    },
+    async fetchBouquet(id){
+      const res = await fetch(`/api/bouquets/${id}`);
+      const data = await res.json();
+      return data;
     },
 
     async fetchBouquets(){

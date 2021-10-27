@@ -28,8 +28,8 @@
           <span class="product-card-price h4 mb-0 d-flex">
             <span class="price">{{bouquet.price}}</span>
           </span>
-          &nbsp;&nbsp;
-          <router-link @click="$emit('edit-bouquet-link',$bouquet)" :to="`/bouquets/${bouquet.id}/update`">Edit</router-link>
+          &nbsp;
+          <a :href="`/bouquets/${bouquet.id}/update`" >Edit</a>&nbsp;
           &nbsp;&nbsp;
           <a href="#" @click="$emit('delete-bouquet',bouquet.id)">Delete</a>
         </div>

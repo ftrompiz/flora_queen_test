@@ -1,11 +1,11 @@
 <template>
-  <Form @form-edited="updateBouquet"
-        :mode_form="mode_form"
-        :bouquet="this.bouquet"
+  <FormBouquet @form-edited="updateSelectedBouquet"
+              :mode_form="mode_form"
+              :bouquet_id="bouquet_id"
   />
 </template>
 <script>
-import Form from '../components/form/FormBouquet'
+import FormBouquet from '../components/form/FormBouquet'
 
 export default {
   name: 'Update',
@@ -13,57 +13,21 @@ export default {
 
   },
   components: {
-    Form
+    FormBouquet
   },
   data() {
     return {
       mode_form: 'Update',
-      bouquet: {}
+      bouquet_id: '',
     }
   },
   methods: {
-    async updateBouquet(bouquet) {
-      const bouquetToEdit = await this.fetchBouquet(bouquet.id);
-      const updBouquet = {
-        ...bouquetToEdit,
-        text: bouquet.text,
-        day: bouquet.day,
-        reminder: bouquet.reminder,
-      }
-
-      const res = await fetch(`api/bouquets/${updBouquet.id}`,{
-        method: 'PUT',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify(updBouquet)
-      });
-
-      if (res.status === 200){
-        this.bouquets = this.bouquets.map((bouquet) =>
-            bouquet.id === updBouquet.id ?
-                { ...bouquet,
-                  text: updBouquet.text,
-                  day: updBouquet.day,
-                  reminder: updBouquet.reminder, } :
-                bouquet)
-      } else {
-        alert('Error updating bouquet')
-      }
-    },
-    async fetchBouquet(id){
-      const res = await fetch(`/api/bouquets/${id}`);
-
-      const data = await  res.json();
-
-      this.bouquet = data;
-
-      return data;
-    },
+    updateSelectedBouquet(bouquet){
+      this.$emit('update-bouquet',bouquet);
+    }
   },
   async created() {
-    const id =  this.$route.params.id
-    await this.fetchBouquet(id)
+    this.bouquet_id = this.$route.params.id
   }
 }
 </script>

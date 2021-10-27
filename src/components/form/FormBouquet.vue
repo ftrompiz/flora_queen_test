@@ -3,21 +3,25 @@
     <h2>{{`${mode_form} Bouquet ${this.id}`}}</h2>
     <form @submit="onSubmit"
           class="flora-form">
+      <input type="hidden"
+             name="id"
+             v-model="id"
+             class="form-control"
+             placeholder="id" />
       <input type="text"
              name="name"
              v-model="name"
              class="form-control"
              placeholder="Name" />
-      <input
-          type="text"
-          name="price"
-          v-model="price"
-          class="form-control"
-          placeholder="Price"
+      <input type="text"
+            name="price"
+            v-model="price"
+            class="form-control"
+            placeholder="Price"
       />
       <button type="submit"
-             value="Save Bouquet"
-             class="btn btn-primary btn-photo-menu">Save Bouquet</button>
+              value="Save Bouquet"
+              class="btn btn-primary btn-photo-menu">Save Bouquet</button>
     </form>
   </div>
 </template>
@@ -25,20 +29,21 @@
 <script>
 export default {
   name: 'Form',
-  data() {
-    console.log(this.bouquet);
-    return {
-      id:     this.mode_form !== 'New' ? this.bouquet.id    : '',
-      name:   this.mode_form !== 'New' ? this.bouquet.name  : '',
-      price:  this.mode_form !== 'New' ? this.bouquet.price : '',
-      image:  this.mode_form !== 'New' ? this.bouquet.image : ''
-    }
-  },
   props: {
-    bouquet: Object,
+
+    bouquet_id: String,
     mode_form: {
       type: String,
       default: 'New'
+    }
+  },
+  data() {
+    return {
+      id:     '',
+      name:   '',
+      price:  '',
+      image:  '',
+      bouquet: {},
     }
   },
   methods: {
@@ -53,10 +58,27 @@ export default {
       }
 
       this.$emit('form-edited',bouquet_info)
+    },
+    async fetchBouquet(id){
+      const res = await fetch(`/api/bouquets/${id}`);
+      const data = await res.json();
 
-    }
+      console.log(data);
+
+      this.id   =   data.id
+      this.name =   data.name
+      this.price =  data.price
+      this.image =  data.image
+
+      return data;
+    },
   },
+  async created() {
+    if (this.mode_form !== 'New') {
+      this.bouquet = await this.fetchBouquet(this.bouquet_id)
+    }
 
+  }
 }
 </script>
 
