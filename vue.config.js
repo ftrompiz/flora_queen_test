@@ -2,7 +2,7 @@ module.exports = {
     devServer: {
         proxy: {
             '^/api': {
-                target: 'http://localhost:500',
+                target: 'https://bouquets.herokuapp.com',
                 changeOrigin: true,
                 logLevel: 'debug',
                 pathRewrite: { '^/api': '/' },
