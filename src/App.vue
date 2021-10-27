@@ -1,8 +1,12 @@
 <template>
   <main class="main">
-    <router-view />
+    <section id="catalogue" class="catalogue mt-md-0 mt-sm-4">
+      <div>
+        <h1>FloraQueen - Frontend Test</h1>
+      </div>
+      <router-view></router-view>
+    </section>
   </main>
-
 </template>
 
 <script>
@@ -17,8 +21,5 @@ export default {
 </script>
 
 <style>
-body {
-@import url('https://d1qc61kr0n3aml.cloudfront.net/assets/min/footer.47c0d5c20fd224c83f3508e6a7e3ff9f.min.css?v=2020041366');
-}
 
 </style>
