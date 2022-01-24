@@ -2,13 +2,14 @@
   <div>
     <div class="row">
         <div class="col-12">
-          <a class="btn btn-lg btn-primary" href="#" @click.prevent="showForm(this.modeFormNew)">New bouquet</a>
+          <a class="btn btn-lg btn-primary"
+             href="#"
+             @click.prevent="showForm(this.modeFormNew)">New bouquet</a>
         </div>
     </div>
     <br>
     <div class="row" v-show="this.displayForm">
       <div class="col-12">
-        <div class="divider"></div>
         <FormBouquet
             :modeForm="this.modeForm"
             :model="this.bouquetEdit"
@@ -17,6 +18,7 @@
         />
       </div>
     </div>
+    <br>
     <div class="container catalogue-products">
       <div class="row">
         <Bouquet :key="bouquet.id"

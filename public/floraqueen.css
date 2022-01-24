@@ -10,8 +10,8 @@
 }
 
 .product-card .product-card-image img {
-    width: 100%;
     padding: 3px;
+    width: 100%;
 }
 
 .product-card-body {
