@@ -15,7 +15,6 @@ export default {
       return req.data
     }).catch(function (error) {
       alert(`An error has ocurred. Motive: ${error.message}`)
-      console.log(error.toJSON())
     })
   },
   getBouquets () {
