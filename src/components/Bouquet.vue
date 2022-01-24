@@ -1,41 +1,38 @@
 <template>
-  <article class="product product-vip js-product-card product-vip">
-    <div class="product-a-favorite">
-      <button type="button"
-              data-save="Añadir a Favoritos"
-              data-saved="Eliminar de Favoritos"
-              class="favorite js-add-to-favorite"
-              title="Añadir a Favoritos">
-        <div class="heart"></div>
-        <div class="ring"></div>
-        <div class="circles"></div>
-      </button>
-    </div>
-    <a class="product-card js-product-link position-relative">
-      <figure class="product-card-image figure figure--placeholder ratio-square"
-              style="background: rgb(240, 240, 240);">
+  <div class="col-md-4">
+    <a class="product-card">
+      <figure class="product-card-image">
         <picture>
           <img :src="bouquet.image"
                :data-id="bouquet.id"
                :alt="bouquet.name"
-               title=""
-               class="figure-image figure-image--breath js-lazy-image">
+               title="">
         </picture>
       </figure>
       <main class="product-card-body">
         <h3 class="product-card-title text-truncate">{{bouquet.name}}</h3>
-        <div class="product-card-details d-flex">
-          <span class="product-card-price h4 mb-0 d-flex">
+        <div class="product-card-details ">
+          <span class="product-card-price">
             <span class="price">{{bouquet.price}}</span>
           </span>
-          &nbsp;
-          <a :href="`/bouquets/${bouquet.id}/update`" >Edit</a>&nbsp;
-          &nbsp;&nbsp;
-          <a href="#" @click="$emit('delete-bouquet',bouquet.id)">Delete</a>
+        </div>
+        <div class="container-fluid nopadding">
+          <div class="row">
+            <div class="col-2">
+              <a href="#"
+                 class="btn btn-sm btn-dark"
+                 @click.prevent="$emit('edit-bouquet',bouquet.id)">Edit</a>
+            </div>
+            <div class="col-2">
+              <a href="#"
+                 class="btn btn-sm btn-danger"
+                 @click.prevent="$emit('delete-bouquet',bouquet.id)">Delete</a>
+            </div>
+          </div>
         </div>
       </main>
     </a>
-  </article>
+  </div>
 </template>
 
 <script>
