@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div class="loading" v-show="this.loading">
+      <div class="loader"></div>
+    </div>
     <div class="row">
         <div class="col-12">
           <a class="btn btn-lg btn-primary"
@@ -50,7 +53,8 @@ export default {
       displayForm: false,
       modeForm: '',
       modeFormNew: 'New',
-      modeFormUpdate: 'Update'
+      modeFormUpdate: 'Update',
+      loading: false
     }
   },
   methods: {
@@ -84,7 +88,9 @@ export default {
       this.displayForm = false
     },
     async refreshListBouquet(){
+      this.loading = true;
       this.bouquets = await Api.getBouquets()
+      this.loading = false;
     },
     setFormForUpdate(bouquet){
       this.bouquetEdit = bouquet
