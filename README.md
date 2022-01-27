@@ -1,4 +1,6 @@
-# flora_queen
+# Floraquen Frontend Test
+
+Frontend Test for Floraqueen
 
 ## Project setup
 ```
