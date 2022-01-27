@@ -1,6 +1,6 @@
-# Floraquen Frontend Test
+# FloraQueen Frontend Test
 
-Frontend Test for Floraqueen
+Frontend Test for FloraQueen
 
 ## Project setup
 ```
